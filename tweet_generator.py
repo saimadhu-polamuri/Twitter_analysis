@@ -25,7 +25,7 @@ def get_followers_tweets(user):
 def get_only_usertweets(user):
 	time_line = user.timeline()
 	for single_tweet in time_line:
-		print ">>>>>>"
+		#print ">>>>>>"
 		if user.id == single_tweet.user.id:
 			if single_tweet.text[0] != '@' and single_tweet.text[0:2] != 'RT':
 				#print single_tweet.text
@@ -40,5 +40,5 @@ def status_update(text):
 	api.update_status(text)
 	print "successfully updated"
 api = tweepy.API(auth)
-user = api.get_user('saimadhup')
+user = api.get_user('saimadhup')        
 get_only_usertweets(user)
